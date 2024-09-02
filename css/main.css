@@ -1,0 +1,237 @@
+body {
+  background-color: #eee;
+  font-family: var(--roboto-font);
+}
+::-webkit-scrollbar-thumb {
+  color: var(--main-color) !important;
+  background-color: var(--main-color) !important;
+  width: 100px;
+}
+:root {
+  --main-color: #00c7fc;
+  --roboto-font: "Roboto", sans-serif;
+  --Crimson-font: "Crimson Text", serif;
+}
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+.bar {
+  margin-top: 2rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: #eee;
+  position: relative;
+  border: 2px solid var(--main-color);
+}
+.bar::after {
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 4rem;
+  background-color: var(--main-color);
+  bottom: -2px;
+  left: calc(-1.75rem - 2px);
+}
+body .container:nth-child(1) {
+  margin-top: 0;
+}
+.container {
+  margin-top: 10rem;
+}
+/* start navbar */
+.navbar .navbar-brand img {
+  height: 40px;
+}
+.navbar-collapse li a {
+  font-family: var(--roboto-font);
+  font-weight: 300;
+}
+.navbar-collapse li a:hover {
+  color: var(--main-color) !important;
+}
+/* start home */
+.container-fluid {
+  padding: 0;
+}
+.home {
+  background-image: url("../image/header.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+}
+.banner {
+  position: absolute;
+  z-index: 99;
+  color: #fff !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.banner h1 {
+  font-weight: 300;
+  font-size: 3rem;
+  text-transform: uppercase;
+}
+.banner .ba-btn {
+  margin-top: 2rem;
+}
+.banner .ba-btn button {
+  color: #fff;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  padding: 15px 30px;
+}
+.banner .ba-btn button:nth-child(1) {
+  background-color: transparent;
+  border: 1px solid #fff;
+}
+.banner .ba-btn button:nth-child(1):hover {
+  background-color: #fff;
+  color: #000;
+}
+.banner .ba-btn button:nth-child(2) {
+  background-color: var(--main-color);
+  border: 1px solid var(--main-color);
+  margin-left: 2rem;
+}
+.banner .ba-btn button:nth-child(2):hover {
+  background-color: #fff;
+  color: var(--main-color);
+}
+/* start history */
+.history {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.history h2 {
+  text-transform: uppercase;
+  font-weight: 300;
+}
+.history .paragraph {
+  max-width: 100%;
+  margin-top: 2rem;
+  text-align: center;
+  font-weight: 300;
+}
+.history .paragraph p {
+  font-size: 15px;
+  margin-bottom: 0;
+  line-height: 25px;
+  font-family: var(--Crimson-font);
+}
+/* start gallery */
+.gallery {
+  margin-top: 10rem;
+}
+.gallery-cell {
+  width: 6fr;
+  height: 30rem;
+  margin-right: 10px;
+  background: #8c8;
+  counter-increment: gallery-cell;
+  position: relative;
+}
+.gallery-cell img {
+  width: 100%;
+  height: 100%;
+}
+.gallery-cell .dis {
+  position: absolute;
+  z-index: 99;
+  bottom: -100%;
+  background-color: var(--main-color);
+  padding: 5px;
+  text-align: center;
+  color: #fff;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  overflow: hidden;
+  transition: 0.5s;
+}
+.gallery-cell .dis h3 {
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: 300 !important;
+  font-family: var(--roboto-font);
+}
+.gallery-cell .dis p {
+  font-size: 15px;
+}
+.gallery-cell:hover .dis {
+  bottom: 0;
+}
+/* start card */
+.b-card {
+  background-color: #fff;
+  height: 25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  transition: 0.5s;
+  position: relative;
+}
+.b-card:hover {
+  transform: translate(0%, -5%);
+  background-color: var(--main-color);
+  border-radius: 15px;
+  box-shadow: 1px 1px 15px gray;
+}
+.b-card::after {
+  content: "";
+  position: absolute;
+  width: 90%;
+  height: 1px;
+  background-color: var(--main-color);
+  top: 25%;
+  left: 5%;
+}
+.b-card .icon svg {
+  font-size: 2.5rem;
+}
+.b-card .title h3 {
+  text-transform: uppercase;
+  font-weight: 200;
+  font-size: 1rem;
+}
+.b-card .b-dis p {
+  padding: 5px;
+  font-size: 0.8rem;
+  text-align: center;
+}
+/* start clients  */
+.clients {
+  background-color: #fff;
+  margin-top: 10rem;
+  margin-bottom: 10rem;
+  padding: 10rem 0;
+}
+/* start footer */
+footer span {
+  font-size: 14px;
+}
